@@ -39,14 +39,14 @@ rescue
   raise
 end
 
-kafka = Kafka.new(seed_brokers: [KAFKA_HOST])
-consumer = kafka.consumer(group_id: "ruby#{MOD_NAME}#{FUNC_HANDLER}")
-consumer.subscribe(TOPIC_NAME)
-trap("TERM") { consumer.stop }
+# kafka = Kafka.new(seed_brokers: [KAFKA_HOST])
+# consumer = kafka.consumer(group_id: "ruby#{MOD_NAME}#{FUNC_HANDLER}")
+# consumer.subscribe(TOPIC_NAME)
+# trap("TERM") { consumer.stop }
 
-consumer.each_message do |message|
-  mod.send(FUNC_HANDLER.to_sym, message.value)
-end
+# consumer.each_message do |message|
+#   mod.send(FUNC_HANDLER.to_sym, message.value)
+# end
 
 set :server, 'webrick'
 set :port, 8080
