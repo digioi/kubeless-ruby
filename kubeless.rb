@@ -51,6 +51,14 @@ end
 set :server, 'webrick'
 set :port, 8080
 
+get '/' do
+  mod.send(FUNC_HANDLER.to_sym, request)
+end
+
+post '/' do
+  mod.send(FUNC_HANDLER.to_sym, request)
+end
+
 get '/healthz' do
   return 'OK'
 end
