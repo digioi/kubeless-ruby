@@ -8,3 +8,5 @@ RUN apt-get update \
 
 ADD Gemfile .
 RUN bundle install
+
+CMD ["ruby", "/kubeless.rb"]
