@@ -12,4 +12,4 @@ RUN gem install sinatra ruby-kafka --no-rdoc --no-ri
 
 ADD kubeless.rb /
 
-CMD ["ruby", "/kubeless.rb"]
+ENTRYPOINT ["ruby", "/kubeless.rb"]
