@@ -15,6 +15,7 @@
 #
 require 'sinatra'
 require 'kafka'
+require 'webrick'
 
 # Don't buffer stdout
 $stdout.sync = true
